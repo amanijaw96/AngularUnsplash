@@ -1,0 +1,7 @@
+.mat-toolbar.mat-primary {
+  background: lavender;
+  color: #404040;
+}
+.example-spacer {
+  flex: 1 1 auto;
+}

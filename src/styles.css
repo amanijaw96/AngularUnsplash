@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+  stroke: #4b0082 !important;
+}

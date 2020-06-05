@@ -1,0 +1,43 @@
+<mat-toolbar color="primary">
+  <button (click)="searchChange($event, 'travel', 'button')" mat-button>
+    Travel
+  </button>
+  <button (click)="searchChange($event, 'Sustainability', 'button')" mat-button>
+    Sustainability
+  </button>
+  <button (click)="searchChange($event, 'nature', 'button')" mat-button>
+    Nature
+  </button>
+  <button
+    id="Animals"
+    (click)="searchChange($event, 'animals', 'button')"
+    mat-button
+  >
+    Animals
+  </button>
+  <button id="food" (click)="searchChange($event, 'food', 'button')" mat-button>
+    Food
+  </button>
+  <button
+    id="fashion"
+    (click)="searchChange($event, 'fashion', 'button')"
+    mat-button
+  >
+    Fashion
+  </button>
+  <span class="example-spacer"></span>
+  <mat-form-field>
+    <input
+      (change)="searchChange($event, 'undefined', 'input')"
+      type="search"
+      matInput
+      [formControl]="search"
+    />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+</mat-toolbar>
+
+<div class="container" style="padding: 13px; display: flex; flex-wrap: wrap">
+  <mat-spinner *ngIf="products.length === 0"></mat-spinner>
+  <app-photo-gallery [products]="products"></app-photo-gallery>
+</div>
