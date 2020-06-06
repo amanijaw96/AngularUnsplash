@@ -10,10 +10,15 @@ export class PhotoGalleryComponent implements OnInit {
 
   load = false;
   removeSkeleton(id) {
-    console.log(id);
     this.load = true;
     document.getElementById(id).style.display = 'block';
     document.getElementById(id + '_skeleton').style.display = 'none';
+  }
+  handleMouseOver(id) {
+    document.getElementById(id + '_download').style.display = 'inline-block';
+  }
+  handleMouseOut(id) {
+    document.getElementById(id + '_download').style.display = 'none';
   }
   constructor() {}
   ngOnInit(): void {

@@ -3,6 +3,8 @@
     style="min-height: 200px ;min-width: 200px"
     class="card"
     *ngFor="let product of products"
+    (mouseover)="handleMouseOver(product.id)"
+    (mouseout)="handleMouseOut(product.id)"
   >
     <img
       id="{{ product.id }}"
@@ -12,31 +14,22 @@
       [alt]="product.title"
       style="display: none"
     />
-
+    <a href="{{ product.links.download }}" target="_blank" download>
+      <mat-icon
+        id="{{ product.id }}_download"
+        style="display:none;bottom:5px;right:10px;position:absolute;cursor:pointer;color:white"
+        matSuffix
+        >get_app</mat-icon
+      >
+    </a>
     <ngx-skeleton-loader
       [theme]="{
-        height: '200px'
+        height: '200px',
+        'margin-bottom': '0px'
       }"
       count="1"
       appearance="line"
       id="{{ product.id }}_skeleton"
     ></ngx-skeleton-loader>
-    <!-- 
-    <div class="card-body">
-      <h5 class="card-title">{{ product.title }}</h5>
-
-      <p class="card-text">
-        Uploaded by {{ product.author_id }} on
-
-        {{ product.published | date: "medium" }}
-      </p>
-      <p class="card-text">{{ product.title }}</p>
-
-      <hr />
-
-      <p class="card-text">
-        <small class="text-muted">{{ product.tags }}</small>
-      </p>
-    </div> -->
   </div>
 </div>
