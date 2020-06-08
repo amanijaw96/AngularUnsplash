@@ -1,30 +1,72 @@
-<mat-toolbar color="primary">
-  <button (click)="searchChange($event, 'travel', 'button')" mat-button>
-    Travel
-  </button>
-  <button (click)="searchChange($event, 'Sustainability', 'button')" mat-button>
-    Sustainability
-  </button>
-  <button (click)="searchChange($event, 'nature', 'button')" mat-button>
-    Nature
-  </button>
-  <button
-    id="Animals"
-    (click)="searchChange($event, 'animals', 'button')"
-    mat-button
+<div class="burgerBox">
+  <mat-icon (click)="showMenu($event)" class="d-md-none d-inline" matSuffix
+    >menu</mat-icon
   >
-    Animals
-  </button>
-  <button id="food" (click)="searchChange($event, 'food', 'button')" mat-button>
-    Food
-  </button>
-  <button
-    id="fashion"
-    (click)="searchChange($event, 'fashion', 'button')"
-    mat-button
-  >
-    Fashion
-  </button>
+</div>
+
+<mat-toolbar
+  class="d-md-flex d-none"
+  style="height:'100%';flex-wrap: wrap"
+  color="primary"
+  id="options_menu"
+>
+  <div class="col-lg-1 col-md-4 col-6">
+    <button
+      style="padding:0px;width:'100%';text-align: left"
+      (click)="searchChange($event, 'travel', 'button')"
+      mat-button
+    >
+      Travel
+    </button>
+  </div>
+  <div class="col-lg-1 col-md-4 col-6">
+    <button
+      style="padding:0px;width:'100%';text-align: left"
+      (click)="searchChange($event, 'Sustainability', 'button')"
+      mat-button
+    >
+      Sustainability
+    </button>
+  </div>
+  <div class="col-lg-1 col-md-4 col-6">
+    <button
+      style="padding:0px;width:'100%';text-align: left"
+      (click)="searchChange($event, 'nature', 'button')"
+      mat-button
+    >
+      Nature
+    </button>
+  </div>
+  <div class="col-lg-1 col-md-4 col-6">
+    <button
+      style="padding:0px;width:'100%';text-align: left"
+      id="Animals"
+      (click)="searchChange($event, 'animals', 'button')"
+      mat-button
+    >
+      Animals
+    </button>
+  </div>
+  <div class="col-lg-1 col-md-4 col-6">
+    <button
+      id="food"
+      style="padding:0px;width:'100%';text-align: left"
+      (click)="searchChange($event, 'food', 'button')"
+      mat-button
+    >
+      Food
+    </button>
+  </div>
+  <div class="col-lg-1 col-md-4 col-6">
+    <button
+      id="fashion"
+      style="padding:0px;width:'100%';text-align: left"
+      (click)="searchChange($event, 'fashion', 'button')"
+      mat-button
+    >
+      Fashion
+    </button>
+  </div>
   <span class="example-spacer"></span>
   <mat-form-field>
     <input
@@ -37,7 +79,7 @@
   </mat-form-field>
 </mat-toolbar>
 
-<div class="container" style="padding: 13px; display: flex; flex-wrap: wrap">
+<div class="container" style="padding-top:13px;display: flex; flex-wrap: wrap">
   <mat-spinner *ngIf="products.length === 0"></mat-spinner>
   <app-photo-gallery [products]="products"></app-photo-gallery>
 </div>

@@ -1,7 +1,6 @@
-<div class="card-columns">
+<div class="card-columns" style="width:'100%'">
   <div
-    style="min-height: 200px ;min-width: 200px"
-    class="card"
+    class="card imageBox"
     *ngFor="let product of products"
     (mouseover)="handleMouseOver(product.id)"
     (mouseout)="handleMouseOut(product.id)"

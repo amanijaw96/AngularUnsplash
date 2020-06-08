@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   products;
   search = new FormControl('');
   searchValue = '';
+  show = false;
 
   searchChange(event, val, type) {
     console.log(event.target.id);
@@ -31,6 +32,16 @@ export class HomeComponent implements OnInit {
         this.products = data;
       }
     });
+  }
+
+  showMenu(event) {
+    if (this.show == false) {
+      document.getElementById('options_menu').classList.remove('d-none');
+      this.show = true;
+    } else {
+      document.getElementById('options_menu').classList.add('d-none');
+      this.show = false;
+    }
   }
 
   constructor(private apiService: ApiService) {}
