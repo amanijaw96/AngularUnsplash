@@ -4,14 +4,14 @@ import { throwError } from 'rxjs';
 import { retry, catchError, tap } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
   private Search_url =
-    'https://api.unsplash.com/search/photos/?client_id=K7vuivmZLjlM-TNmHAJ2mhgrdukhZRpi18kUiMz3IJE&per_page=5&query=';
+    'https://api.unsplash.com/search/photos/?client_id=K7vuivmZLjlM-TNmHAJ2mhgrdukhZRpi18kUiMz3IJE&per_page=6&query=';
 
   private SERVER_URL =
-    'https://api.unsplash.com/photos/?client_id=K7vuivmZLjlM-TNmHAJ2mhgrdukhZRpi18kUiMz3IJE&per_page=5';
+    'https://api.unsplash.com/photos/?client_id=K7vuivmZLjlM-TNmHAJ2mhgrdukhZRpi18kUiMz3IJE&per_page=6';
 
   constructor(private httpClient: HttpClient) {}
 
@@ -28,9 +28,11 @@ export class ApiService {
     return throwError(errorMessage);
   }
 
-  public get(search: string) {
+  public get(search: string, page) {
     let response = this.httpClient.get(
-      search !== '' ? this.Search_url + search : this.SERVER_URL
+      search !== ''
+        ? this.Search_url + search + '&page=' + page
+        : this.SERVER_URL + '&page=' + page
     );
     return response;
   }

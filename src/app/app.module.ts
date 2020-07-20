@@ -6,6 +6,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +23,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    PhotoGalleryComponent
+    PhotoGalleryComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,9 +38,10 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
     MatProgressSpinnerModule,
     ReactiveFormsModule,
     MatInputModule,
-    NgxSkeletonLoaderModule
+    NgxSkeletonLoaderModule,
+    MatPaginatorModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

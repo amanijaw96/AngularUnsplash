@@ -6,13 +6,13 @@
 
 <mat-toolbar
   class="d-md-flex d-none"
-  style="height:'100%';flex-wrap: wrap"
+  style="height: '100%'; flex-wrap: wrap;"
   color="primary"
   id="options_menu"
 >
   <div class="col-lg-1 col-md-4 col-6">
     <button
-      style="padding:0px;width:'100%';text-align: left"
+      style="padding: 0px; width: '100%'; text-align: left;"
       (click)="searchChange($event, 'travel', 'button')"
       mat-button
     >
@@ -21,7 +21,7 @@
   </div>
   <div class="col-lg-1 col-md-4 col-6">
     <button
-      style="padding:0px;width:'100%';text-align: left"
+      style="padding: 0px; width: '100%'; text-align: left;"
       (click)="searchChange($event, 'Sustainability', 'button')"
       mat-button
     >
@@ -30,7 +30,7 @@
   </div>
   <div class="col-lg-1 col-md-4 col-6">
     <button
-      style="padding:0px;width:'100%';text-align: left"
+      style="padding: 0px; width: '100%'; text-align: left;"
       (click)="searchChange($event, 'nature', 'button')"
       mat-button
     >
@@ -39,7 +39,7 @@
   </div>
   <div class="col-lg-1 col-md-4 col-6">
     <button
-      style="padding:0px;width:'100%';text-align: left"
+      style="padding: 0px; width: '100%'; text-align: left;"
       id="Animals"
       (click)="searchChange($event, 'animals', 'button')"
       mat-button
@@ -50,7 +50,7 @@
   <div class="col-lg-1 col-md-4 col-6">
     <button
       id="food"
-      style="padding:0px;width:'100%';text-align: left"
+      style="padding: 0px; width: '100%'; text-align: left;"
       (click)="searchChange($event, 'food', 'button')"
       mat-button
     >
@@ -60,7 +60,7 @@
   <div class="col-lg-1 col-md-4 col-6">
     <button
       id="fashion"
-      style="padding:0px;width:'100%';text-align: left"
+      style="padding: 0px; width: '100%'; text-align: left;"
       (click)="searchChange($event, 'fashion', 'button')"
       mat-button
     >
@@ -79,7 +79,18 @@
   </mat-form-field>
 </mat-toolbar>
 
-<div class="container" style="padding-top:13px;display: flex; flex-wrap: wrap">
+<div
+  class="container"
+  style="padding-top: 13px; display: flex; flex-wrap: wrap;"
+>
   <mat-spinner *ngIf="products.length === 0"></mat-spinner>
   <app-photo-gallery [products]="products"></app-photo-gallery>
+  <div style="display: flex; justify-content: center; width: 100%;">
+    <mat-paginator
+      (page)="pageChange($event)"
+      [length]="TotalPages"
+      [pageSize]="6"
+    >
+    </mat-paginator>
+  </div>
 </div>
