@@ -1,87 +1,107 @@
-<div class="burgerBox">
+<!-- <div class="burgerBox">
   <mat-icon (click)="showMenu($event)" class="d-md-none d-inline" matSuffix
     >menu</mat-icon
   >
-</div>
+</div> -->
 
-<mat-toolbar
+<!-- <mat-toolbar
   class="d-md-flex d-none"
   style="height: '100%'; flex-wrap: wrap;"
   color="primary"
   id="options_menu"
->
-  <div class="col-lg-1 col-md-4 col-6">
-    <button
-      style="padding: 0px; width: '100%'; text-align: left;"
-      (click)="searchChange($event, 'travel', 'button')"
-      mat-button
-    >
-      Travel
-    </button>
+> -->
+<div class="hero">
+  <h1 style="text-align: center; color: #e8e8e8; font-size: 50px;">
+    Lets get started
+  </h1>
+  <div
+    style="
+      margin-top: 30px;
+      width: '100%';
+      display: flex;
+      justify-content: center;
+    "
+  >
+    <div class="col-lg-3 col-md-6 col-12">
+      <mat-form-field style="width: 100%;" appearance="outline">
+        <input
+          (change)="searchChange($event, 'undefined', 'input')"
+          type="search"
+          matInput
+          style="color: white;"
+          [formControl]="search"
+        />
+        <mat-icon matSuffix style="color: white;">search</mat-icon>
+      </mat-form-field>
+    </div>
   </div>
-  <div class="col-lg-1 col-md-4 col-6">
-    <button
-      style="padding: 0px; width: '100%'; text-align: left;"
-      (click)="searchChange($event, 'Sustainability', 'button')"
-      mat-button
-    >
-      Sustainability
-    </button>
+  <div class="button_wrapper">
+    <div class="col-lg-1 col-md-4 col-6">
+      <button
+        class="heroButtons"
+        (click)="searchChange($event, 'travel', 'button')"
+        mat-button
+      >
+        Travel
+      </button>
+    </div>
+    <div class="col-lg-1 col-md-4 col-6">
+      <button
+        class="heroButtons"
+        (click)="searchChange($event, 'Sustainability', 'button')"
+        mat-button
+      >
+        Sustainability
+      </button>
+    </div>
+    <div class="col-lg-1 col-md-4 col-6">
+      <button
+        class="heroButtons"
+        (click)="searchChange($event, 'nature', 'button')"
+        mat-button
+      >
+        Nature
+      </button>
+    </div>
+    <div class="col-lg-1 col-md-4 col-6">
+      <button
+        class="heroButtons"
+        id="Animals"
+        (click)="searchChange($event, 'animals', 'button')"
+        mat-button
+      >
+        Animals
+      </button>
+    </div>
+    <div class="col-lg-1 col-md-4 col-6">
+      <button
+        id="food"
+        class="heroButtons"
+        (click)="searchChange($event, 'food', 'button')"
+        mat-button
+      >
+        Food
+      </button>
+    </div>
+    <div class="col-lg-1 col-md-4 col-6">
+      <button
+        id="fashion"
+        class="heroButtons"
+        (click)="searchChange($event, 'fashion', 'button')"
+        mat-button
+      >
+        Fashion
+      </button>
+    </div>
   </div>
-  <div class="col-lg-1 col-md-4 col-6">
-    <button
-      style="padding: 0px; width: '100%'; text-align: left;"
-      (click)="searchChange($event, 'nature', 'button')"
-      mat-button
-    >
-      Nature
-    </button>
-  </div>
-  <div class="col-lg-1 col-md-4 col-6">
-    <button
-      style="padding: 0px; width: '100%'; text-align: left;"
-      id="Animals"
-      (click)="searchChange($event, 'animals', 'button')"
-      mat-button
-    >
-      Animals
-    </button>
-  </div>
-  <div class="col-lg-1 col-md-4 col-6">
-    <button
-      id="food"
-      style="padding: 0px; width: '100%'; text-align: left;"
-      (click)="searchChange($event, 'food', 'button')"
-      mat-button
-    >
-      Food
-    </button>
-  </div>
-  <div class="col-lg-1 col-md-4 col-6">
-    <button
-      id="fashion"
-      style="padding: 0px; width: '100%'; text-align: left;"
-      (click)="searchChange($event, 'fashion', 'button')"
-      mat-button
-    >
-      Fashion
-    </button>
-  </div>
-  <span class="example-spacer"></span>
-  <mat-form-field>
-    <input
-      (change)="searchChange($event, 'undefined', 'input')"
-      type="search"
-      matInput
-      [formControl]="search"
-    />
-    <mat-icon matSuffix>search</mat-icon>
-  </mat-form-field>
-</mat-toolbar>
+  <!-- <span class="example-spacer"></span> -->
+</div>
+
+<!-- </mat-toolbar> -->
 
 <div
-  class="container"
-  style="padding-top: 13px; display: flex; flex-wrap: wrap;"
+  class="container ContentBox"
+  style="margin-top: -100px; display: flex; flex-wrap: wrap;"
 >
   <mat-spinner *ngIf="products.length === 0"></mat-spinner>
   <app-photo-gallery [products]="products"></app-photo-gallery>
@@ -89,7 +109,7 @@
     <mat-paginator
       (page)="pageChange($event)"
       [length]="TotalPages"
-      [pageSize]="6"
+      [pageSize]="10"
     >
     </mat-paginator>
   </div>

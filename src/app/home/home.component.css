@@ -9,3 +9,42 @@
 .burgerBox {
   background: lavender;
 }
+
+.hero {
+  height: 500px;
+  background-color: #2e4053;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.button_wrapper {
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
+  flex-wrap: wrap;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: white !important;
+}
+
+.heroButtons {
+  width: 100%;
+  text-align: left;
+  color: #e8e8e8;
+  /* border: 1px solid white; */
+  text-align: center;
+  /* border-radius: 100px; */
+  padding: 6px 15px;
+  font-size: 13px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+
+@media screen and (max-width: 768px) {
+  .ContentBox {
+    margin-top: -50px !important;
+  }
+}
